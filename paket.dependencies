@@ -3,3 +3,10 @@ source https://nuget.org/api/v2
 nuget FsReveal
 nuget FAKE
 nuget Suave
+
+group Demo
+  source https://nuget.org/api/v2
+
+  nuget FSharp.Management
+  nuget FSharp.Data
+  nuget FSharp.Configuration
