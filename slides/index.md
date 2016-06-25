@@ -907,7 +907,7 @@ Low risk
 
 - Explicit is better than implicit.
 - Simple is better than Complex. Complex is better than Complicated.
-- Special cases aren't special enought to break the rules.
+- Special cases aren't special enough to break the rules.
   Although practicality beats purity.
 - If the implementation is hard to explain, it's a bad idea.
 
