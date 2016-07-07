@@ -22,6 +22,9 @@ type PostalAddress = string
  - Adoption?
  - Challenges?
 
+' Wer hat einen objektiven Vortrag erwartet?
+' Wer hat einen einseitigen Vortrag zugunsten F# erwartet?
+
 ***
 
 ### What is F#
@@ -43,6 +46,7 @@ type PostalAddress = string
 [fsharp.org/testimonials](http://fsharp.org/testimonials/)
 
 ' O’Connor’s is a law book publisher
+' Testimonials gerne mal durchlesen
 
 ---
 
@@ -51,6 +55,8 @@ type PostalAddress = string
 "Most successful projects I have written have all been in F#."
 
 > Colin Bull, talking about enterprise software
+
+' F#Xchange London
 
 ---
 
@@ -69,20 +75,31 @@ type PostalAddress = string
    - Triple-quoted strings
    - Object expressions
 
+' Open Source -> Contribute und Zukünftige Features diskuttieren bzw mitgestalten
+' Functional First -> Aber einheitliche Syntax auch für andere Paradigmen
+' Nulls -> Structs in C# -> Nullable
+' Typed -> Refactoring, Intellisense
+' Measure -> Mehr Typisierung, sogar floats. Fehler bei Rechenoperationen.
+' Expressive -> Später mehr, weniger Code -> besser lesbar
+
 ---
 
 ### What is F#
 
 - Less Work
-   - Don't write what the compiler can figure out
-   - Shorter and more generic code -> code reusability
-   - Think more on the problem, less on HOW to implement it
+   - Let the compiler do the work
+   - Code reusability
+   - More declarative
    - Quickly try several solutions
 - Meta programming
    - Transpiler to Javascript ([FunScript](http://funscript.info/), [Fable](https://github.com/fsprojects/Fable)),  and [GPU code](http://fsharp.org/use/gpu/)
    - Quotations
    - Type providers -> [JSON](http://fsharp.github.io/FSharp.Data/library/JsonProvider.html) (+ REST Apis, [for example WorldBank](http://fsharp.github.io/FSharp.Data/library/WorldBank.html)), [XML](http://fsharp.github.io/FSharp.Data/library/XmlProvider.html), [PowerShell](http://fsprojects.github.io/FSharp.Management/PowerShellProvider.html), [Python](http://fsprojects.github.io/FSharp.Interop.PythonProvider/), ["R"](http://bluemountaincapital.github.io/FSharpRProvider/), [SQL](http://fsprojects.github.io/SQLProvider/), [Registry](http://fsprojects.github.io/FSharp.Management/RegistryProvider.html), [WMI](http://fsprojects.github.io/FSharp.Management/WMIProvider.html), [FileSystem](http://fsprojects.github.io/FSharp.Management/FileSystemProvider.html), [HTML](http://fsharp.github.io/FSharp.Data/library/HtmlProvider.html), [Excel](http://fsprojects.github.io/ExcelProvider/), [CSV](http://fsharp.github.io/FSharp.Data/library/CsvProvider.html)
    - Computation Expressions -> async, sequence, [cloud](http://mbrace.io/programming-model.html), [asyncSeq](http://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html) or your [own](https://yaaf.de/blog/post/2016-05-28/Having%20Fun%20with%20Computation%20Expressions)
+
+' Code reusability -> often more generic -> more reusable
+' Declarative -> Korrekte abstraktion einfacher zu finden
+' Several Tries -> Basisfunktionalität zu Datenstruktur <> Algorithmus
 
 ---
 
@@ -120,6 +137,8 @@ let u = 5
 
 - No semi colons required
 - u is immutable by default (a symbol no variable)
+
+' Bereits ein Zeichen gespart und Zeit '; expected in line X'
 
 ---
 
@@ -200,6 +219,9 @@ let printFruit fruit =
 - Documentation
 - printFruit is another class (the visitor)
 
+' Kein C# code weil zu lang
+' Eigentlich ein enum mit angehängen Werten.
+' Match ist ein switch
 
 ---
 
@@ -249,6 +271,9 @@ with
 | :? BException when someCondition -> //...
 ```
 
+' Wer merkt was? "when" gibt es mittlerweile auch bei C# -> Exception Filters
+' Unterschied: https://github.com/Microsoft/visualfsharp/pull/66#issuecomment-89144672
+
 ---
 
 ### F# is simple: Records
@@ -275,6 +300,9 @@ let printPerson p =
 - Equality members.
 - Pattern matching.
 - Immutable by default.
+
+' Konsistente Syntax -> Wie gebaut so gematched!
+' Felder können mutable deklariert werden.
 
 ***
 
@@ -336,6 +364,8 @@ What [do people say](http://simontylercousins.net/does-the-language-you-use-make
 ' C# Solution was too complex and could never implement all contracts
 ' They simplified the contracts but never managed to get it correct
 ' C# Solution was slow
+' Letztlich sollte man mehrere Sprachen lernen 'Dijkstra'
+' Wer als Werkzeug nur einen Hammer hat, sieht in jedem Problem einen Nagel.
 
 ***
 
@@ -354,7 +384,7 @@ What [do people say](http://simontylercousins.net/does-the-language-you-use-make
 
 - Layout, Readability
 - Naming
-- Understandable and Expressiveness
+- Understandable and Expressive
 - Abstractions
 
 ***
@@ -411,80 +441,9 @@ There should be one - and preferable only one - obvious way to do it.
 
 ---
 
-### Layout: Structure
+### Layout: Whitespace
 
-```csharp
-public ResultType MyClevermethod(
-    int firstArg,
-    string secondArg,
-    string thirdArg)
-{
-    var localVar =
-        AnotherCleverMethod(firstArg, secondArg);
-    if (localVar.IsSomething(
-        thirdArg, MY_CONSTANT))
-    {
-        DoSomething(localVar);
-    }
-    return localVar.GetSomething();
-}
-```
-
----
-
-### Layout: Structure
-
-```
-XXXXXX XXXXXXXXXX XXXXXXXXXXXXXXX
-    XXX XXXXXXXXX
-    XXXXXX XXXXXXXXXX
-    XXXXXX XXXXXXXXX
-
-    XXX XXXXXXXX 
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXX
-    XX XXXXXXXXX XXXXXXXXXXXX
-        XXXXXXXXX XXXXXXXXXXXXX
-    
-        XXXXXXXXXXXXXXXXXXXXXX
-    
-    XXXXXX XXXXXXXXX XXXXXXXXXXXXXX
-```
-
-' Single characters are removed
-' Where does the body start?
-' What about incorrect whitespace?
-' Mixed tabs and spaces?
-
----
-
-### Layout: Structure
-
-```fsharp
-let myClevermethod x y y =
-    let localVar = anotherCleverMethod x y
-
-    if localVar.IsSomething z MY_CONSTANT then
-        doSomething localVar
-    
-    localVar.GetSomething
-```
-
----
-
-### Layout: Structure
-
-```
-XXX XXXXXXXXXXXXXX
-    XXX XXXXXXXX XXXXXXXXXXXXXXXXXXX
-
-    XX XXXXXXXX XXXXXXXXXXX XXXXXXXX XXXXXXXXXXX XXXX
-        XXXXXXXXXXX XXXXXXXX
-
-    XXXXXXXX XXXXXXXXXXXX
-```
-
-' Code blocks can be seen -> enforced by the compiler
-' return value is the last line (no return within the function code)
+![Comparison](images/ThrowThisIn.png)
 
 ---
 
@@ -498,6 +457,8 @@ XXX XXXXXXXXXXXXXX
 
 ![How we read code](images/how_we_read_code.jpg)
 
+' Monkey -> zoo -> bar -> foo
+
 ---
 
 ### Layout: Structure
@@ -509,7 +470,6 @@ let doSomething x y =
     |> bar x
     |> foo y
 ```
-
 
 ***
 
@@ -532,6 +492,7 @@ let doSomething x y =
 [methodnamer.com](http://methodnamer.com/)
 
 ' Github search FactoryFactory -> 3154 results, 1000 for java.
+' F# vermeidet viele namen -> nächste Folien
 
 ---
 
@@ -573,6 +534,8 @@ public interface ICondition
 }
 ```
 
+' Wer hatte das nicht: Wie soll ich das bennenen, eingentlich steht schon alles da?
+
 ---
 
 ### Naming: Smaller than object?
@@ -606,6 +569,7 @@ enterpriseCrew.OrderBy(
 
 ' Perfectly reasonable in F# to abstract things in interfaces
 ' Sometimes they don't even have a class, because you create them by combining and wrapping via functions
+' Namensvermeidung zieht sich durch die Sprache
 
 ***
 
@@ -665,6 +629,8 @@ let symbol =
 DoSomething(symbol)
 ```
 
+' Fall vergesseb -> Compiler Error
+
 ---
 
 ### Expressiveness: "Everything" is an expression
@@ -676,7 +642,7 @@ let symbol =
   with
     | :? AException -> fallback1
     | :? BException -> fallback1
-symbol
+DoSomething(symbol)
 ```
 
 ```fsharp
@@ -701,6 +667,9 @@ var variable = condition ? Value1 : fallback;
 ```fsharp
 let variable = if condition then Value1 else fallback
 ```
+
+' Weniger Konstrukte als gedacht
+' Musste damals googeln Tertiärer Operator in F#
 
 ---
 
@@ -753,6 +722,8 @@ cloud {
 ```
 
 > [mbrace](http://mbrace.io/programming-model.html)
+
+' Neues Statment für C# F#pler bauen einfach die nächste Computation Expression.
 
 ***
 
@@ -814,6 +785,7 @@ type Contact = { Name : string; ContactInfo : ContactInfo }
 ' Caller needs to exlicitly handle all cases.
 ' Compiler error instead of runtime error.
 ' Assumes `EmailAddress` and `PostalAddress` are defined in F# as well
+' Nicht mehr "arbeit" es richtig zu machen.
 
 ***
 
@@ -832,7 +804,7 @@ type Contact = { Name : string; ContactInfo : ContactInfo }
 
 Low risk
 
-- Runs on CLR, mono and the new "CoreCLR"
+- Runs on CLR, mono and the new "dotnetcore"
 - Open Source
 - Good Interop
 - Back-out to C#
@@ -885,6 +857,18 @@ Low risk
  - **Challenges?**
 
 ***
+
+### Challenges?
+
+- Designer Support
+- After C#
+- Before C#
+
+' Not so important nowadays for web development.
+' But F# community and visualfsharp team is working hard to provide a good oob experience
+' Example: "Exception filters" nicht die selbe Semantik.
+
+---
 
 ### Challenges?
 
