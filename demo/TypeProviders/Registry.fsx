@@ -9,6 +9,6 @@
 
 open FSharp.Management
 
-let path = Registry.HKEY_CURRENT_USER.Path
+let path = Registry.HKEY_CURRENT_USER.ControlPanel.Colors.Path
 printfn "path: %s" path
 

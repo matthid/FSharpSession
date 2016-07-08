@@ -508,6 +508,8 @@ words
 - Shorter names ([When x, y, z are great variable names](http://blog.ploeh.dk/2015/08/17/when-x-y-and-z-are-great-variable-names/))
 - Fewer things to name
 
+' Einfache parallelisierung
+
 ---
 
 ### Naming: Short names
