@@ -1,7 +1,7 @@
 - title : F# und C# im Vergleich
 - description : Einführung in F#
 - author : Matthias Dittrich
-- theme : night
+- theme : sky
 - transition : default
 
 ```fsharp
@@ -63,13 +63,13 @@ type PostalAddress = string
 ### What is F#
 
 - Open Source
-- Functional-First -> Imperative, Object Oriented... multi-paradigm
+- Functional-First -> multi-paradigm
 - Less error prone
    - No Nulls by default
    - Stongly typed
    - Units of measure
 - Expressive
-   - Pattern matching, Records, Tuples, Discriminated Unions
+   - Pattern matching: Records, Tuples, Discriminated Unions
    - Scripting -> Automation (even one-liners)
    - Active Patterns
    - Triple-quoted strings
@@ -254,10 +254,10 @@ match o with
 try {
   // ...
 } 
-with (AException a) {
+catch (AException a) {
   // ...
 }
-with (BException b) {
+catch (BException b) {
   if (!someCondition) throw;
   // ...
 }
@@ -575,47 +575,15 @@ enterpriseCrew.OrderBy(
 
 ***
 
-### Understandable and Expressiveness
-
-```csharp
-public void DoProcess() {
-   for (int i = 0; i < this.Processes.Count; i++) {
-      this.Results[i] = this.Processes[i].Calculate();
-      if (this.Results[i].Status == Status.Failed) {
-        return;
-      }
-   }
-}
-```
-
----
-
-### Understandable and Expressiveness
-
-```fsharp
-let calculateUntilFail processes =
-  processes
-  |> Seq.map (fun p -> p.Calculate())
-  |> Seq.takeWhile (fun r -> r.Status <> Status.Failed)
-  |> Seq.toList
-```
-
-' pure: Same parameters, same results
-' side effect free
-' easier to reason about
-' less error prone (array indices,  ...)
-
----
-
 ### Expressiveness: "Everything" is an expression
 
 ```csharp
 var variable = null;
 try {
   variable = TrySomethingRisky()
-} with (AException) {
+} catch (AException) {
   variable = fallback1;
-} with (BException) {
+} catch (BException) {
   variable = fallback2;
 }
 return DoSomething(variable);
@@ -631,7 +599,7 @@ let symbol =
 DoSomething(symbol)
 ```
 
-' Fall vergesseb -> Compiler Error
+' Fall vergessen -> Compiler Error
 
 ---
 
@@ -787,7 +755,7 @@ type Contact = { Name : string; ContactInfo : ContactInfo }
 ' Caller needs to exlicitly handle all cases.
 ' Compiler error instead of runtime error.
 ' Assumes `EmailAddress` and `PostalAddress` are defined in F# as well
-' Nicht mehr "arbeit" es richtig zu machen.
+' Nicht mehr "Arbeit" es richtig zu machen.
 
 ***
 
@@ -866,9 +834,11 @@ Low risk
 - After C#
 - Before C#
 
-' Not so important nowadays for web development.
+' Support für neue Umgebungen: C# First
+' "Research": F# First, "Exception filters" nicht die selbe Semantik.
+' Designer: Not so important nowadays for web development.
 ' But F# community and visualfsharp team is working hard to provide a good oob experience
-' Example: "Exception filters" nicht die selbe Semantik.
+
 
 ---
 
@@ -928,7 +898,7 @@ let fastFunc = memoize somePureLongRunningFunc
 ***
 
 
-### AIT, challenge yourself!
+### Challenge yourself!
 
 - "Practice does not make perfect. Only perfect practice makes perfect"
 - "Perfection is not attainable. But if we chase perfection, we can catch excellence"
@@ -937,7 +907,7 @@ let fastFunc = memoize somePureLongRunningFunc
 
 ---
 
-### AIT, challenge yourself!
+### Challenge yourself!
 
 - "Programming languages have a devious influence: They shape our thinking habits."
 
