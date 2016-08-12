@@ -1,5 +1,5 @@
-- title : F# und C# im Vergleich
-- description : Einführung in F#
+- title : F# - Der unterschätzte Bruder von C#
+- description : Eine kleine Reise durch die Welt von F#
 - author : Matthias Dittrich
 - theme : sky
 - transition : default
@@ -10,6 +10,14 @@
 type EmailAddress = string
 type PostalAddress = string
 ```
+
+***
+
+### F# - Der unterschätzte Bruder von C#
+
+<img style="border-style: none" border="0" src="images/AIT-Logo_small.jpg" />
+
+### **Matthias Dittrich**, AIT GmbH <br /> [@matthi\_\_d](http://twitter.com/matthi__d) | [github](https://github.com/matthid) | [aitgmbh.de](http://www.aitgmbh.de/)
 
 ***
 
@@ -90,7 +98,6 @@ type PostalAddress = string
    - Let the compiler do the work
    - Code reusability
    - More declarative
-   - Quickly try several solutions
 - Meta programming
    - Transpiler to Javascript ([FunScript](http://funscript.info/), [Fable](https://github.com/fsprojects/Fable)),  and [GPU code](http://fsharp.org/use/gpu/)
    - Quotations
@@ -595,7 +602,7 @@ let symbol =
     TrySomethingRisky()
   with
     | :? AException -> fallback1
-    | :? BException -> fallback1
+    | :? BException -> fallback2
 DoSomething(symbol)
 ```
 
@@ -611,7 +618,7 @@ let symbol =
     TrySomethingRisky()
   with
     | :? AException -> fallback1
-    | :? BException -> fallback1
+    | :? BException -> fallback2
 DoSomething(symbol)
 ```
 
@@ -620,7 +627,7 @@ try
   TrySomethingRisky()
 with
   | :? AException -> fallback1
-  | :? BException -> fallback1
+  | :? BException -> fallback2
 |> DoSomething
 ```
 
@@ -693,7 +700,7 @@ cloud {
 
 > [mbrace](http://mbrace.io/programming-model.html)
 
-' Neues Statment für C# F#pler bauen einfach die nächste Computation Expression.
+' Neues Statement für C# F#pler bauen einfach die nächste Computation Expression.
 
 ***
 
@@ -737,6 +744,7 @@ public class Contact {
 ' Runtime error only.
 ' Needs unit test.
 ' Caller might not handle the null case (sample data / tests all contain email address).
+' Even if you limit with 3 contructors -> caller might not be sure about the contract
 
 ---
 
@@ -756,6 +764,17 @@ type Contact = { Name : string; ContactInfo : ContactInfo }
 ' Compiler error instead of runtime error.
 ' Assumes `EmailAddress` and `PostalAddress` are defined in F# as well
 ' Nicht mehr "Arbeit" es richtig zu machen.
+
+***
+
+### What is doing F# differently?
+
+![F# Benefits](images/benefits_fsharp.jpg)
+
+[F# Annual Survey 2016](https://www.infoq.com/articles/fsharp-community-survey-2016)
+
+' over 600 developers
+' F# is not just for science and calculations 
 
 ***
 
