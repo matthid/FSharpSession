@@ -4,9 +4,16 @@ nuget FsReveal
 nuget FAKE
 nuget Suave
 
-group Demo
-  source https://nuget.org/api/v2
+group DemoFileOrdering
+  source https://api.nuget.org/v3/index.json
+  storage: none
 
+  nuget FSharp.Core
+
+group DemoTypeProvider
+  source https://nuget.org/api/v2
+  generate_load_scripts: true
+  
   nuget FSharp.Management
   nuget FSharp.Data
   nuget FSharp.Configuration
