@@ -21,8 +21,17 @@ type PostalAddress = string
 
 ***
 
-- Viele Sprachen durchprobiert
+### Who am I?
 
+- uses lots of languages
+  
+  (AutoIt, C#, C++, Java, Python, F#)
+- AIT GmbH & Co KG. - consulting & development
+- currently working on a message based architecture (Protbuf, AMQP)
+- long time [Gentoo Linux](https://www.gentoo.org/) [user](https://github.com/matthid/gentoo-overlay)
+- maintainer of [RazorEngine](https://github.com/Antaris/RazorEngine)
+- [Paket](https://fsprojects.github.io/Paket/), [FAKE (5)](https://fake.build/) and [FSharp.Formatting](https://github.com/fsprojects/FSharp.Formatting)
+- Autor [of](https://github.com/matthid/s2client-dotnet) [lots](https://github.com/matthid/ClusterManagement) [of](https://github.com/matthid/Yaaf.FSharp.Scripting) [other](https://github.com/matthid/Yaaf.Xmpp.Runtime) [projects](https://github.com/matthid/blobby-volley-2)
 
 ***
 
@@ -933,6 +942,7 @@ let fastFunc = memoize somePureLongRunningFunc
  - [Real world functional programming](https://msdn.microsoft.com/en-us/library/hh314518(v=vs.100).aspx)
  - [Luca Bolognese](https://channel9.msdn.com/Blogs/pdc2008/TL11)
  - [Enterprise F#](https://skillsmatter.com/skillscasts/7430-enterprise-f-sharp)
+ - [Folien](https://github.com/matthid/FSharpSession)
 
  
 ***
