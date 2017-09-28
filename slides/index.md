@@ -1,4 +1,4 @@
-- title : F# - Der unterschätzte Bruder von C#
+- title : Sind Sie Agil genug für F#? - mit F# den Entwicklungsprozess verbessert
 - description : Eine kleine Reise durch die Welt von F#
 - author : Matthias Dittrich
 - theme : sky
@@ -13,11 +13,16 @@ type PostalAddress = string
 
 ***
 
-### F# - Der unterschätzte Bruder von C#
+### Sind Sie Agil genug für F#? - mit F# den Entwicklungsprozess verbessert
 
 <img style="border-style: none" border="0" src="images/AIT-Logo_small.jpg" />
 
 ### **Matthias Dittrich**, AIT GmbH <br /> [@matthi\_\_d](http://twitter.com/matthi__d) | [github](https://github.com/matthid) | [aitgmbh.de](http://www.aitgmbh.de/)
+
+***
+
+- Viele Sprachen durchprobiert
+
 
 ***
 
@@ -70,54 +75,46 @@ type PostalAddress = string
 
 ### What is F#
 
-- Open Source
-- Functional-First -> multi-paradigm
-- Less error prone
-   - No Nulls by default
-   - Stongly typed
-   - Units of measure
-- Expressive
-   - Pattern matching: Records, Tuples, Discriminated Unions
-   - Scripting -> Automation (even one-liners)
-   - Active Patterns
-   - Triple-quoted strings
-   - Object expressions
-
-' Open Source -> Contribute und Zukünftige Features diskuttieren bzw mitgestalten
-' Functional First -> Aber einheitliche Syntax auch für andere Paradigmen
-' Nulls -> Structs in C# -> Nullable
-' Typed -> Refactoring, Intellisense
-' Measure -> Mehr Typisierung, sogar floats. Fehler bei Rechenoperationen.
-' Expressive -> Später mehr, weniger Code -> besser lesbar
-
----
-
-### What is F#
-
-- Less Work
-   - Let the compiler do the work
-   - Code reusability
-   - More declarative
-- Meta programming
-   - Transpiler to Javascript ([FunScript](http://funscript.info/), [Fable](https://github.com/fsprojects/Fable)),  and [GPU code](http://fsharp.org/use/gpu/)
-   - Quotations
-   - Type providers -> [JSON](http://fsharp.github.io/FSharp.Data/library/JsonProvider.html) (+ REST Apis, [for example WorldBank](http://fsharp.github.io/FSharp.Data/library/WorldBank.html)), [XML](http://fsharp.github.io/FSharp.Data/library/XmlProvider.html), [PowerShell](http://fsprojects.github.io/FSharp.Management/PowerShellProvider.html), [Python](http://fsprojects.github.io/FSharp.Interop.PythonProvider/), ["R"](http://bluemountaincapital.github.io/FSharpRProvider/), [SQL](http://fsprojects.github.io/SQLProvider/), [Registry](http://fsprojects.github.io/FSharp.Management/RegistryProvider.html), [WMI](http://fsprojects.github.io/FSharp.Management/WMIProvider.html), [FileSystem](http://fsprojects.github.io/FSharp.Management/FileSystemProvider.html), [HTML](http://fsharp.github.io/FSharp.Data/library/HtmlProvider.html), [Excel](http://fsprojects.github.io/ExcelProvider/), [CSV](http://fsharp.github.io/FSharp.Data/library/CsvProvider.html)
-   - Computation Expressions -> async, sequence, [cloud](http://mbrace.io/programming-model.html), [asyncSeq](http://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html) or your [own](https://yaaf.de/blog/post/2016-05-28/Having%20Fun%20with%20Computation%20Expressions)
-
-' Code reusability -> often more generic -> more reusable
-' Declarative -> Korrekte abstraktion einfacher zu finden
-' Several Tries -> Basisfunktionalität zu Datenstruktur <> Algorithmus
-
----
-
-### What is F#
-
 Just another .NET language
 
 ' You can replace assembly by assembly
 ' Interop with all you know from .Net
 ' Only parts can be in F#
 
+---
+
+### What is F#
+
+- Open Source
+- Functional-First -> multi-paradigm
+- Less error prone
+- Expressive
+- Less Work
+
+' Open Source -> Contribute und Zukünftige Features diskuttieren bzw mitgestalten
+' Functional First -> Aber einheitliche Syntax auch für andere Paradigmen
+' Errors: No Nulls -> Structs in C# -> Nullable
+' Errors: Strongly Typed -> Refactoring, Intellisense
+' Errors: Units of Measure -> Mehr Typisierung, sogar floats. Fehler bei Rechenoperationen.
+' Expressive -> weniger Code -> besser lesbar
+' Expressive: Pattern matching - Records, Tuples, Discriminated Unions
+' Expressive: Scripting -> Automation (even one-liners)
+' Expressive: Active Patterns
+' Expressive: Triple-quoted strings
+' Expressive: Object expressions
+
+---
+
+### What is F#
+
+- Javascript - [Fable](http://fable.io/)
+- Type providers (Meta programming) -> [JSON](http://fsharp.github.io/FSharp.Data/library/JsonProvider.html) (+ REST Apis, [for example WorldBank](http://fsharp.github.io/FSharp.Data/library/WorldBank.html)), [XML](http://fsharp.github.io/FSharp.Data/library/XmlProvider.html), [PowerShell](http://fsprojects.github.io/FSharp.Management/PowerShellProvider.html), [Python](http://fsprojects.github.io/FSharp.Interop.PythonProvider/), ["R"](http://bluemountaincapital.github.io/FSharpRProvider/), [SQL](http://fsprojects.github.io/SQLProvider/), [Registry](http://fsprojects.github.io/FSharp.Management/RegistryProvider.html), [WMI](http://fsprojects.github.io/FSharp.Management/WMIProvider.html), [FileSystem](http://fsprojects.github.io/FSharp.Management/FileSystemProvider.html), [HTML](http://fsharp.github.io/FSharp.Data/library/HtmlProvider.html), [Excel](http://fsprojects.github.io/ExcelProvider/), [CSV](http://fsharp.github.io/FSharp.Data/library/CsvProvider.html)
+- Quotations (Meta programming)
+- Computation Expressions (Meta programming) -> async, sequence, [cloud](http://mbrace.io/programming-model.html), [asyncSeq](http://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html) or your [own](https://yaaf.de/blog/post/2016-05-28/Having%20Fun%20with%20Computation%20Expressions)
+
+' Code reusability -> often more generic -> more reusable
+' Declarative -> Korrekte abstraktion einfacher zu finden
+' Several Tries -> Basisfunktionalität zu Datenstruktur <> Algorithmus
 
 ***
 
@@ -132,7 +129,7 @@ Just another .NET language
 
 ***
 
-### F# is really simple
+### F# is C# on steroids
 
 ```csharp
 var t = 5;
@@ -149,17 +146,19 @@ let u = 5
 
 ---
 
-### F# is really simple
+### F# is C# on steroids
 
 ```csharp
-public int Add(int a, int b) { 
-  return a + b;
+public int Add(int a, int b) {
+    int c = a + 1;
+    return c + b;
 }
 ```
 
 ```fsharp
 let add a b =
-  a + b
+    let c = a + 1
+    c + b
 ```
 
 - No return keyword, last value is returned.
@@ -169,18 +168,18 @@ let add a b =
 
 ---
 
-### F# is really simple
+### F# is C# on steroids
 
 ```csharp
 public class Person {
-  public string Name { get; } // C#7
-  public Person(string name) { Name = name; }
+    public string Name { get; } // C#7
+    public Person(string name) { Name = name; }
 }
 ```
 
 ```fsharp
 type Person (name:string) =
-  member x.Name = name
+    member x.Name = name
 ```
 
 - No start- and end-brace is needed, whitespace counts.
@@ -189,17 +188,17 @@ type Person (name:string) =
 
 ---
 
-### F# is really simple
+### F# is C# on steroids
 
 ```csharp
 public interface IPerson {
-  public string Name { get; }
+    public string Name { get; }
 }
 ```
 
 ```fsharp
 type IPerson =
-  abstract Name : string
+    abstract Name : string
 ```
 
 - Interface = Type without implementations and without constructor
@@ -207,32 +206,7 @@ type IPerson =
 
 ---
 
-### Discriminated unions and pattern matching
-
-```fsharp
-type Fruit =
-  | Apple of radius:int
-  | Banana of length:int
-
-let printFruit fruit =
-  match fruit with
-  | Apple radius -> sprintf "a tasty apple with radius %d" radius
-  | Banana length -> sprintf "banana with size %d" length
-```
-
-- C#: 3 classes are required (abstract base class Fruit, Apple, Banana)
-- Visitor pattern
-- Equality members
-- Documentation
-- printFruit is another class (the visitor)
-
-' Kein C# code weil zu lang
-' Eigentlich ein enum mit angehängen Werten.
-' Match ist ein switch
-
----
-
-### F# is simple: Match = switch on steroids
+### Match = switch on steroids
 
 ```csharp
 var a = o as A;
@@ -255,7 +229,7 @@ match o with
 
 ---
 
-### F# is simple: Consistent syntax
+### Consistent syntax
 
 ```csharp
 try {
@@ -283,19 +257,19 @@ with
 
 ---
 
-### F# is simple: Records
+### Records
 
 ```csharp
 public class Person {
-  public string Name { get; }
-  public string Address { get; }
-  public Person(string name, string address) {
-    Name = name; Address = address } }
+    public string Name { get; }
+    public string Address { get; }
+    public Person(string name, string address) {
+        Name = name; Address = address } }
 ```
 
 ```fsharp
 type Person =
-  { Name : string; Address : string option }
+    { Name : string; Address : string option }
 
 let createPerson name = { Name = name; Address = None }
 let printPerson p =
@@ -567,10 +541,10 @@ No abstraction is too small.
 
 ```fsharp
 enterpriseCrew.OrderBy(
-  (fun c -> c.Current),
-  { new IComparer<Occupation> with
-      member __.Compare(x, y) =
-        x.Position.CompareTo(y.Position) })
+    (fun c -> c.Current),
+    { new IComparer<Occupation> with
+        member __.Compare(x, y) =
+            x.Position.CompareTo(y.Position) })
 ```
 
 - No need to define a class, no need to name it.
@@ -587,22 +561,22 @@ enterpriseCrew.OrderBy(
 ```csharp
 var variable = null;
 try {
-  variable = TrySomethingRisky()
+    variable = TrySomethingRisky()
 } catch (AException) {
-  variable = fallback1;
+    variable = fallback1;
 } catch (BException) {
-  variable = fallback2;
+    variable = fallback2;
 }
 return DoSomething(variable);
 ```
 
 ```fsharp
 let symbol =
-  try
-    TrySomethingRisky()
-  with
-    | :? AException -> fallback1
-    | :? BException -> fallback2
+    try
+        TrySomethingRisky()
+    with
+      | :? AException -> fallback1
+      | :? BException -> fallback2
 DoSomething(symbol)
 ```
 
@@ -614,17 +588,17 @@ DoSomething(symbol)
 
 ```fsharp
 let symbol =
-  try
-    TrySomethingRisky()
-  with
-    | :? AException -> fallback1
-    | :? BException -> fallback2
+    try
+        TrySomethingRisky()
+    with
+      | :? AException -> fallback1
+      | :? BException -> fallback2
 DoSomething(symbol)
 ```
 
 ```fsharp
 try
-  TrySomethingRisky()
+    TrySomethingRisky()
 with
   | :? AException -> fallback1
   | :? BException -> fallback2
@@ -700,7 +674,7 @@ cloud {
 
 > [mbrace](http://mbrace.io/programming-model.html)
 
-' Neues Statement für C# F#pler bauen einfach die nächste Computation Expression.
+' Neues Statement für C# - F#pler bauen einfach die nächste Computation Expression.
 
 ***
 
@@ -724,7 +698,7 @@ Business rules:
 
 ---
 
-### Abstractions: make illegal states unrepresentable
+### Ein Vorschlag in C#
 
 ```csharp
 public class Contact {
@@ -739,26 +713,39 @@ public class Contact {
     EMail = email;
     Address = address; 
 }
-``` 
+```
 
+' Frage: Wer würde das so implementieren?
 ' Runtime error only.
 ' Needs unit test.
 ' Caller might not handle the null case (sample data / tests all contain email address).
 ' Even if you limit with 3 contructors -> caller might not be sure about the contract
+' Frage: Wie würde eine vollständige Implementierung aussehen?
 
 ---
 
 ### Abstractions: make illegal states unrepresentable
 
 ```fsharp
+// Discriminated union
 type ContactInfo = 
     | EmailOnly of EmailAddress
     | PostOnly of PostalAddress
     | EmailAndPost of EmailAddress * PostalAddress
 
 type Contact = { Name : string; ContactInfo : ContactInfo } 
+
+// pattern match -> switch on steriods
+let printContact contact =
+    match contact with
+    | EmailAndPost (email, _)
+    | EmailOnly email -> sprintf "EmailContact: %A" email
+    | PostOnly post -> sprintf "Post-Contact: %A" post
 ```
 
+' C#: 3 classes are required (abstract base class Fruit, Apple, Banana)
+' Visitor Pattern + Equality members + Documentation
+' PrintContact is another class -> Visitor
 ' No Nulls.
 ' Caller needs to exlicitly handle all cases.
 ' Compiler error instead of runtime error.
@@ -793,10 +780,10 @@ type Contact = { Name : string; ContactInfo : ContactInfo }
 
 Low risk
 
-- Runs on CLR, mono and the new "dotnetcore"
+- Runs on CLR, mono and the new "dotnetcore" + Javascript
 - Open Source
 - Good Interop
-- Back-out to C#
+- Back-out to C# / Javascript
 
 > [@simontcousins](http://www.slideshare.net/simontcousins/time-for-functions)
 
@@ -888,7 +875,7 @@ Low risk
 
 > [the Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 
-' F# type inference, sometimes explicit type annotations make sence: Example public interfaces.
+' F# type inference, sometimes explicit type annotations make sense: Example public interfaces.
 ' There is no efficient pure dictionary -> use mutability for well understood core structures.
 ' Trick encapsulate away the state.
 

@@ -1,8 +1,8 @@
 ﻿
-#r "../../packages/demo/FSharp.Management/lib/net40/System.Management.Automation.dll"
-#r "../../packages/demo/FSharp.Management/lib/net40/FSharp.Management.dll"
-#r "../../packages/demo/FSharp.Management/lib/net40/FSharp.Management.PowerShell.dll"
-#r "../../packages/demo/FSharp.Management/lib/net40/FSharp.Management.PowerShell.ExternalRuntime.exe"
+#r "../../packages/demotypeprovider/FSharp.Management/lib/net40/System.Management.Automation.dll"
+#r "../../packages/demotypeprovider/FSharp.Management/lib/net40/FSharp.Management.dll"
+#r "../../packages/demotypeprovider/FSharp.Management/lib/net40/FSharp.Management.PowerShell.dll"
+#r "../../packages/demotypeprovider/FSharp.Management/lib/net40/FSharp.Management.PowerShell.ExternalRuntime.exe"
 #r "System.ServiceProcess"
 #r "System.Management"
 
@@ -28,4 +28,4 @@ module MyScriptLib =
   let doSomething parameter =
     match PSScript.doSomething(test=parameter) with
     | Success s when s.Length = 1 -> s.[0]
-    | _ -> failwith "script failed"
+    | _ -> failwith "powershell script failed"

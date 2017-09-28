@@ -1,4 +1,4 @@
-group Demo
+group DemoTypeProvider
 FSharp.Management
 FSharp.Data
 FSharp.Configuration

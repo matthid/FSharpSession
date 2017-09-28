@@ -1,4 +1,4 @@
-# F# vs C# presentation
+# F# presentation
 
 Git bash / Unix:
 
@@ -17,4 +17,4 @@ Your browser is opened with the presentation:
 - Esc: Overview
 - s: Speaker notes
 
-Demos are in the demo folder. They work after `./build.sh` was called the first time.
+Demos are in the demo folder. They work after `./build.sh`/`build.cmd` was called the first time.

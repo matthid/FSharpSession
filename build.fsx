@@ -91,7 +91,8 @@ let socketHandler (webSocket : WebSocket) =
       let! refreshed =
         Control.Async.AwaitEvent(refreshEvent.Publish)
         |> Suave.Sockets.SocketOp.ofAsync 
-      do! webSocket.send Text (ASCII.bytes "refreshed") true
+      let bytes = ASCII.bytes "refreshed"
+      do! webSocket.send Text (ByteSegment(bytes, 0, bytes.Length)) true
   }
 
 let startWebServer () =
@@ -108,7 +109,7 @@ let startWebServer () =
     let serverConfig = 
         { defaultConfig with
            homeFolder = Some (FullName outDir)
-           bindings = [ HttpBinding.mkSimple HTTP "127.0.0.1" port ]
+           bindings = [ HttpBinding.createSimple HTTP "127.0.0.1" port ]
         }
     let app =
       choose [

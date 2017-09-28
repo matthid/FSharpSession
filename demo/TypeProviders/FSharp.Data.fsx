@@ -1,13 +1,13 @@
 ﻿
 
-#r "../../packages/demo/FSharp.Data/lib/net40/FSharp.Data.dll"
+#r "../../packages/demotypeprovider/FSharp.Data/lib/net40/FSharp.Data.dll"
 open FSharp.Data
 
 type Simple = JsonProvider<""" { "name":"John", "age":94 } """>
 let simple = Simple.Parse(""" { "name":"Tomas", "age":4 } """)
 
 
-simple.
+ignore simple
 
 
 
