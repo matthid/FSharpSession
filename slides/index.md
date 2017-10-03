@@ -74,16 +74,6 @@ type PostalAddress = string
 
 ### What is F#
 
-"Most successful projects I have written have all been in F#."
-
-> Colin Bull, talking about enterprise software
-
-' F#Xchange London
-
----
-
-### What is F#
-
 Just another .NET language
 
 ' You can replace assembly by assembly
@@ -124,6 +114,16 @@ Just another .NET language
 ' Code reusability -> often more generic -> more reusable
 ' Declarative -> Korrekte abstraktion einfacher zu finden
 ' Several Tries -> Basisfunktionalität zu Datenstruktur <> Algorithmus
+
+---
+
+### What is F#
+
+"Most successful projects I have written have all been in F#."
+
+> Colin Bull, talking about enterprise software
+
+' F#Xchange London
 
 ***
 
